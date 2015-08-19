@@ -16,6 +16,7 @@ public class UdpSender : MonoBehaviour {
 	{
 		Debug.Log("sending..");
 		var u = new System.Net.Sockets.UdpClient();
+		u.EnableBroadcast = true;
 		u.Connect(server, listenPort);
 		var sendBytes = System.Text.Encoding.ASCII.GetBytes(message);
 		sent = false;

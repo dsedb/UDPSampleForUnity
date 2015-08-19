@@ -24,6 +24,7 @@ public class UdpReceiver : MonoBehaviour {
 	IEnumerator receive_loop() {
 		var e = new System.Net.IPEndPoint(System.Net.IPAddress.Any, listenPort);
 		var u = new System.Net.Sockets.UdpClient(e);
+		u.EnableBroadcast = true;
 		var s = new UdpState();
 		s.e = e;
 		s.u = u;
